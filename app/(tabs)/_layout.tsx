@@ -37,9 +37,7 @@ export default function TabLayout() {
           title: "Send",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
-              name={
-                focused ? "information-circle" : "information-circle-outline"
-              }
+              name={focused ? "send" : "send-outline"}
               color={color}
               size={24}
             />
@@ -52,9 +50,7 @@ export default function TabLayout() {
           title: "Receive",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
-              name={
-                focused ? "information-circle" : "information-circle-outline"
-              }
+              name={focused ? "wallet" : "wallet-outline"}
               color={color}
               size={24}
             />
@@ -67,9 +63,7 @@ export default function TabLayout() {
           title: "History",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
-              name={
-                focused ? "information-circle" : "information-circle-outline"
-              }
+              name={focused ? "timer" : "timer-outline"}
               color={color}
               size={24}
             />
@@ -82,9 +76,7 @@ export default function TabLayout() {
           title: "Profile",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
-              name={
-                focused ? "information-circle" : "information-circle-outline"
-              }
+              name={focused ? "person-circle" : "person-circle-outline"}
               color={color}
               size={24}
             />

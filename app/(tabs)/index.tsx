@@ -2,6 +2,7 @@ import { useRouter } from "expo-router";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { useWalletStore } from "../../src/stores/wallet-store";
 import Headers from "../../src/components/general/Headers.tsx";
+import Balance from "../../src/components/home/Balance";
 
 export default function Tab() {
   const router = useRouter();
@@ -11,10 +12,7 @@ export default function Tab() {
     <>
       <View style={styles.container}>
         <Headers />
-        <Text style={styles.title}>Home Screen</Text>
-        <TouchableOpacity onPress={() => router.push("/(auth)/login")}>
-          <Text>{isDevnet ? "True" : "False"}</Text>
-        </TouchableOpacity>
+        <Balance />
       </View>
     </>
   );
@@ -25,7 +23,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "black",
     alignItems: "center",
-    padding: 20,
+    paddingVertical: 20,
+    paddingHorizontal: 10,
   },
   title: {
     fontSize: 28,

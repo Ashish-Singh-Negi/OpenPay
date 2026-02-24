@@ -12,7 +12,7 @@ export default function RootLayout() {
           <Stack.Screen name="(auth)" options={{ headerShown: false }} />
         </Stack>
       </SafeAreaProvider>
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
     </>
   );
 }

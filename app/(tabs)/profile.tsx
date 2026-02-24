@@ -1,11 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import Headers from "../../src/components/general/Headers";
 
 export default function profile() {
   return (
-    <View>
-      <Text>profile</Text>
-    </View>
+    <>
+      <Headers />
+      <View>
+        <Text>Profile</Text>
+      </View>
+    </>
   );
 }
 

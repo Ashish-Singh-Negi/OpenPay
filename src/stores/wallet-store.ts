@@ -4,12 +4,14 @@ import { createJSONStorage, persist } from "zustand/middleware";
 
 interface WalletStore {
   public: string;
+  balance: number;
   chainHealth: boolean;
   isDevnet: boolean;
   transactionHistory: string[];
 
-  addToHistory: (address: string) => void;
   toggleNetwork: () => void;
+  updateBalance: (bal: number) => void;
+  addToHistory: (address: string) => void;
   toggleChainHealth: (health: boolean) => void;
 }
 
@@ -17,6 +19,7 @@ export const useWalletStore = create<WalletStore>()(
   persist(
     (set) => ({
       public: "",
+      balance: 0,
       isDevnet: true,
       chainHealth: true,
       transactionHistory: [],
@@ -27,6 +30,11 @@ export const useWalletStore = create<WalletStore>()(
             address,
             ...state.transactionHistory.filter((a) => a !== address),
           ],
+        })),
+
+      updateBalance: (bal) =>
+        set(() => ({
+          balance: bal,
         })),
 
       toggleNetwork: () => set((state) => ({ isDevnet: !state.isDevnet })),

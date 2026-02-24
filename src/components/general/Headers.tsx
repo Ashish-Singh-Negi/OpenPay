@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    fontSize: 32,
+    fontSize: 20,
     fontWeight: "700",
     color: "#fff",
     letterSpacing: 0.5,
@@ -99,22 +99,22 @@ const styles = StyleSheet.create({
   statusPill: {
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 16,
-    paddingVertical: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
     borderRadius: 999,
     backgroundColor: "#1a1a1a",
-    gap: 10,
+    gap: 6,
   },
 
   statusDot: {
-    width: 12,
-    height: 12,
+    width: 10,
+    height: 10,
     borderRadius: 6,
   },
 
   tpsText: {
     color: "#fff",
-    fontSize: 16,
+    fontSize: 13,
     fontWeight: "600",
   },
 });
