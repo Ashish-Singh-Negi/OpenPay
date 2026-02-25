@@ -9,8 +9,8 @@ import {
 
 const txns = [
   { sig: "asdfasdfa", ok: true, send: false },
-  { sig: "asdfasdfa", ok: true, send: true },
-  { sig: "asdfasdfa", ok: true, send: false },
+  { sig: "asdfasasdfa", ok: true, send: true },
+  { sig: "a34sdfasdfa", ok: true, send: false },
 ];
 
 export default function RecentTransactions() {
@@ -18,6 +18,7 @@ export default function RecentTransactions() {
     <View style={styles.container}>
       <Text style={styles.title}>RecentTransactions</Text>
       <>
+        <Text style={styles.title}>RecentTransactions</Text>
         <FlatList
           data={txns}
           keyExtractor={(t) => t.sig}
@@ -30,7 +31,6 @@ export default function RecentTransactions() {
               }
             >
               <View>
-                {/* <Text style={styles.mint}>{short(item.sig, 8)}</Text> */}
                 <View
                   style={{ flexDirection: "row", alignItems: "center", gap: 4 }}
                 >
@@ -42,10 +42,7 @@ export default function RecentTransactions() {
                   />
                   <Text style={styles.mint}>fg4f7ha...98hv</Text>
                 </View>
-                <Text style={styles.time}>
-                  {/* {item.time ? timeAgo(item.time) : "pending"} */}
-                  12:45
-                </Text>
+                <Text style={styles.time}>12:45</Text>
               </View>
               <Text
                 style={{

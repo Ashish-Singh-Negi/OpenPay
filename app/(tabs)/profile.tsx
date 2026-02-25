@@ -2,6 +2,7 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import Headers from "../../src/components/general/Headers";
 import { useLocalSearchParams } from "expo-router";
+// openpay:///input?amount=150&recipient=JohnDoe
 
 export default function profile() {
   const params = useLocalSearchParams();

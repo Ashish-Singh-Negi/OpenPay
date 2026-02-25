@@ -1,11 +1,17 @@
+import { useNavigation, useRouter } from "expo-router";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function MainButtons() {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Quick Actions</Text>
       <View style={{ gap: 4 }}>
-        <TouchableOpacity style={styles.send}>
+        <TouchableOpacity
+          style={styles.send}
+          onPress={() => router.navigate("/(e)/qr")}
+        >
           <Text style={[styles.btnText, { color: "#1f42ad" }]}>
             Send Crypto
           </Text>

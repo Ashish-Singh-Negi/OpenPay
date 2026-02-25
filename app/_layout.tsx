@@ -10,6 +10,7 @@ export default function RootLayout() {
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+          <Stack.Screen name="(e)" options={{ headerShown: false }} />
         </Stack>
       </SafeAreaProvider>
       <StatusBar style="light" />
