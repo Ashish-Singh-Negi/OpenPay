@@ -1,6 +1,8 @@
 import { View, Text, StyleSheet } from "react-native";
 import { useEffect, useState } from "react";
 import { useWalletStore } from "../../stores/wallet-store";
+import { useTheme } from "../../../utils/themes/ThemeContext";
+import { AppTheme } from "../../../utils/themes/types";
 
 export default function Headers() {
   const [TPS, setTPS] = useState<number | null>(null);
@@ -54,6 +56,9 @@ export default function Headers() {
     return () => clearInterval(interval);
   }, []);
 
+  const { theme } = useTheme();
+  const styles = createStyles(theme);
+
   return (
     <View style={styles.container}>
       {/* Logo */}
@@ -75,46 +80,48 @@ export default function Headers() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    height: 72,
-    width: "100%",
-    backgroundColor: "#000",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
+function createStyles(theme: AppTheme) {
+  return StyleSheet.create({
+    container: {
+      height: 72,
+      width: "100%",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
+    },
 
-  logo: {
-    fontSize: 20,
-    fontWeight: "700",
-    color: "#fff",
-    letterSpacing: 0.5,
-  },
+    logo: {
+      fontSize: 24,
+      fontWeight: "700",
+      color: theme.logo.primary,
+      letterSpacing: 0.5,
+    },
 
-  logoAccent: {
-    color: "#3b82f6",
-  },
+    logoAccent: {
+      color: theme.logo.secondary,
+    },
 
-  statusPill: {
-    flexDirection: "row",
-    alignItems: "center",
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 999,
-    backgroundColor: "#1a1a1a",
-    gap: 6,
-  },
+    statusPill: {
+      height: 36,
+      flexDirection: "row",
+      alignItems: "center",
+      paddingHorizontal: 14,
+      paddingVertical: 6,
+      borderRadius: 999,
+      backgroundColor: theme.bgColor.secondary,
+      gap: 6,
+    },
 
-  statusDot: {
-    width: 10,
-    height: 10,
-    borderRadius: 6,
-  },
+    statusDot: {
+      width: 12,
+      height: 12,
+      borderRadius: 6,
+    },
 
-  tpsText: {
-    color: "#fff",
-    fontSize: 13,
-    fontWeight: "600",
-  },
-});
+    tpsText: {
+      color: theme.textColor.primary,
+      fontSize: 13,
+      fontWeight: "600",
+    },
+  });
+}

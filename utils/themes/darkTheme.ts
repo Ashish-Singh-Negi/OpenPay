@@ -3,6 +3,10 @@ import { colorPalette } from "./colorPalette";
 const { white, black, gray, slate, success, error, blue } = colorPalette;
 
 export const darkTheme = {
+  logo: {
+    primary: white,
+    secondary: blue[500],
+  },
   bgColor: {
     primary: black,
     secondary: gray[950],
@@ -10,6 +14,7 @@ export const darkTheme = {
   textColor: {
     primary: white,
     secondary: slate[200],
+    muted: slate[600],
     link: blue[400],
   },
   status: {
@@ -35,5 +40,8 @@ export const darkTheme = {
       bg: blue[950],
       text: blue[500],
     },
+  },
+  borderColor: {
+    primary: blue[950],
   },
 };
