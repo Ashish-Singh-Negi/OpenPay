@@ -1,13 +1,10 @@
 import { CameraView } from "expo-camera";
 import {
-  Alert,
   Linking,
   Platform,
   SafeAreaView,
   StatusBar,
   StyleSheet,
-  Text,
-  View,
 } from "react-native";
 
 export default function QRScan() {
@@ -18,7 +15,6 @@ export default function QRScan() {
       <CameraView
         style={styleSheet.camStyle}
         facing="back"
-        //barcodeScannerSettings={{}}
         onBarcodeScanned={({ data }) => {
           Linking.openURL(data);
         }}

@@ -1,4 +1,3 @@
-// src/utils/verifySetup.ts
 import { Keypair } from "@solana/web3.js";
 
 export function verifyPolyfills(): boolean {

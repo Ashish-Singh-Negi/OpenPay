@@ -12,7 +12,7 @@ export default function Tab() {
 
   const isDevnet = useWalletStore((s) => s.isDevnet);
   const isMerchant = useWalletStore((s) => s.isMerchant);
-  console.log(isMerchant);
+
   return (
     <>
       <View style={styles.container}>

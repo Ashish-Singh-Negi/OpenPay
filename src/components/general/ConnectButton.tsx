@@ -49,6 +49,7 @@ export function ConnectButton({ onConnect, onError }: ConnectButtonProps) {
         );
 
         onConnect(publicKey, authResult.auth_token);
+        return;
       });
     } catch (error: any) {
       if (error.message?.includes("timeout")) {
