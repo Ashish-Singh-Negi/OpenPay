@@ -1,19 +1,26 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Tabs } from "expo-router";
+import { useTheme } from "../../utils/themes/ThemeContext";
+import { View } from "react-native";
 
 export default function TabLayout() {
+  const { theme } = useTheme();
+
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "#3D86F4",
-        headerStyle: {
-          backgroundColor: "#25292e",
-        },
-        headerShadowVisible: false,
+        tabBarActiveTintColor: theme.navbar.active.text,
         headerShown: false,
-        headerTintColor: "#fff",
         tabBarStyle: {
-          backgroundColor: "#25292e",
+          backgroundColor: theme.bgColor.secondary,
+          height: 80,
+          paddingTop: 4,
+          paddingHorizontal: 14,
+          borderTopColor: theme.borderColor.primary,
+        },
+        tabBarLabelStyle: {
+          fontSize: 12,
+          marginTop: 4,
         },
       }}
     >
@@ -22,11 +29,7 @@ export default function TabLayout() {
         options={{
           title: "Home",
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name={focused ? "home-sharp" : "home-outline"}
-              color={color}
-              size={24}
-            />
+            <TabIcon name="home-sharp" color={color} focused={focused} />
           ),
         }}
       />
@@ -36,11 +39,7 @@ export default function TabLayout() {
         options={{
           title: "Send",
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name={focused ? "send" : "send-outline"}
-              color={color}
-              size={24}
-            />
+            <TabIcon name="paper-plane" color={color} focused={focused} />
           ),
         }}
       />
@@ -49,11 +48,7 @@ export default function TabLayout() {
         options={{
           title: "Receive",
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name={focused ? "wallet" : "wallet-outline"}
-              color={color}
-              size={24}
-            />
+            <TabIcon name="wallet" color={color} focused={focused} />
           ),
         }}
       />
@@ -62,11 +57,7 @@ export default function TabLayout() {
         options={{
           title: "History",
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name={focused ? "timer" : "timer-outline"}
-              color={color}
-              size={24}
-            />
+            <TabIcon name="time" color={color} focused={focused} />
           ),
         }}
       />
@@ -75,14 +66,39 @@ export default function TabLayout() {
         options={{
           title: "Profile",
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name={focused ? "person-circle" : "person-circle-outline"}
-              color={color}
-              size={24}
-            />
+            <TabIcon name="person" color={color} focused={focused} />
           ),
         }}
       />
     </Tabs>
+  );
+}
+
+function TabIcon({
+  name,
+  color,
+  focused,
+}: {
+  name: any;
+  color: string;
+  focused: boolean;
+}) {
+  return (
+    <View
+      style={{
+        alignItems: "center",
+        justifyContent: "center",
+        width: 60,
+        height: 32,
+        borderRadius: 16,
+        backgroundColor: focused ? "#1E3A5F" : "transparent",
+      }}
+    >
+      <Ionicons
+        name={focused ? `${name}` : `${name}-outline`}
+        size={22}
+        color={color}
+      />
+    </View>
   );
 }
