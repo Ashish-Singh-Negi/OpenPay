@@ -43,5 +43,6 @@ export const darkTheme = {
   },
   borderColor: {
     primary: blue[950],
+    focused: blue[500],
   },
 };

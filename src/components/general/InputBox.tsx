@@ -53,7 +53,7 @@ function createStyles(theme: AppTheme) {
       gap: 10,
     },
     label: {
-      fontSize: 14,
+      fontSize: 12,
       fontWeight: "500",
       color: theme.textColor.primary,
     },
