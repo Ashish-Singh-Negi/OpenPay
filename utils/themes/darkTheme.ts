@@ -23,7 +23,7 @@ export const darkTheme = {
   },
   button: {
     primary: {
-      bg: blue[800],
+      bg: blue[700],
       text: white,
     },
     secondary: {

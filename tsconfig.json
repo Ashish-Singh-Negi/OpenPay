@@ -3,6 +3,7 @@
   "compilerOptions": {
     // "strict": true
     "moduleResolution": "bundler",
-    "module": "esnext"
+    "module": "esnext",
+    "jsx": "react-native"
   }
 }
