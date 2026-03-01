@@ -14,12 +14,14 @@ import {
 import { PublicKey } from "@solana/web3.js";
 import { toByteArray } from "react-native-quick-base64";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { ConnectButton } from "../../src/components/general/ConnectButton";
-import { transferSol } from "../../utils/transferSol";
-import { useStyles } from "../../utils/themes/useStyles";
-import { AppTheme } from "../../utils/themes/types";
-import ToggleBtn from "../../src/components/general/ToggleBtn";
-import Button from "../../src/components/general/Button";
+import { ConnectButton } from "../../../src/components/general/ConnectButton";
+import { transferSol } from "../../../utils/transferSol";
+import { useStyles } from "../../../utils/themes/useStyles";
+import { AppTheme } from "../../../utils/themes/types";
+import ToggleBtn from "../../../src/components/general/ToggleBtn";
+import Button from "../../../src/components/general/Button";
+import NavigationBtn from "../../../src/components/general/NavigationBtn";
+import { useTheme } from "../../../utils/themes/ThemeContext";
 
 const APP_IDENTITY = {
   name: "OpenPay",
@@ -60,6 +62,7 @@ export default function profile() {
   // transferSol("7eCr2hyPdmeaJ84hqobHHSKqSSpUp4m79AADVT8eZcn9", 0.2);
 
   const [merchantMode, setMerchantMode] = useState(false);
+  const { isDark, toggleTheme } = useTheme();
 
   const styles = useStyles(createStyles);
 
@@ -99,6 +102,19 @@ export default function profile() {
         label="Merchant mode"
         active={merchantMode}
         onPress={() => setMerchantMode((prev) => !prev)}
+      />
+
+      <NavigationBtn
+        label="Dashboard"
+        route="/profile/dashboard"
+        iconName={"arrow-forward-outline"}
+      />
+
+      {/* Toggle dark mode */}
+      <ToggleBtn
+        label="Dark mode"
+        active={isDark}
+        onPress={() => toggleTheme()}
       />
     </View>
   );

@@ -11,7 +11,7 @@ import { AppTheme } from "../../../utils/themes/types";
 
 interface ButtonProps extends TouchableOpacityProps {
   label: string;
-  iconName?: string;
+  iconName?: typeof Ionicons;
   iconSize?: number;
 }
 
