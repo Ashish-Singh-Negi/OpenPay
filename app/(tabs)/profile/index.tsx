@@ -97,25 +97,27 @@ export default function profile() {
         </View>
       </View>
 
-      {/* Merchant mode toggle */}
-      <ToggleBtn
-        label="Merchant mode"
-        active={merchantMode}
-        onPress={() => setMerchantMode((prev) => !prev)}
-      />
+      <View style={[styles.colContainer, { gap: 8, paddingHorizontal: 0 }]}>
+        {/* Merchant mode toggle */}
+        <ToggleBtn
+          label="Merchant mode"
+          active={merchantMode}
+          onPress={() => setMerchantMode((prev) => !prev)}
+        />
 
-      <NavigationBtn
-        label="Dashboard"
-        route="/profile/dashboard"
-        iconName={"arrow-forward-outline"}
-      />
+        <NavigationBtn
+          label="Dashboard"
+          route="/profile/dashboard"
+          iconName={"arrow-forward-outline"}
+        />
 
-      {/* Toggle dark mode */}
-      <ToggleBtn
-        label="Dark mode"
-        active={isDark}
-        onPress={() => toggleTheme()}
-      />
+        {/* Toggle dark mode */}
+        <ToggleBtn
+          label="Dark mode"
+          active={isDark}
+          onPress={() => toggleTheme()}
+        />
+      </View>
     </View>
   );
 }
